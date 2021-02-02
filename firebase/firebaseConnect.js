@@ -6,13 +6,14 @@ const firebaseConnect = async () => {
   // Initialize Firebase
   if (!firebase.apps.length) {
     firebase.initializeApp(config);
-    firebase.analytics();
 
-    var serviceAccount = require("firebase-adminsdk-4fqas@firenet-3a33d.iam.gserviceaccount.com");
+    var serviceAccount = require("./firenet-3a33d-firebase-adminsdk-4fqas-ee7f7607be.json");
 
     admin.initializeApp({
       credential: admin.credential.cert(serviceAccount),
     });
+
+    console.log("Firebase initialised".cyan.bold);
   }
 };
 
